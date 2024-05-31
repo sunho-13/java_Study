@@ -46,5 +46,16 @@ public class MathExam {
         }
 
     }
+
+    public int mathTest005(int n1, int n2) throws Exception {
+        if( n1 < 0 || n1 > 101) {
+            throw new Exception("num1 값은 0보다 크거나 101보다 작아야 함.");
+        }
+        if( n2 < 0 || n2 > 101) {
+            throw new RuntimeException("num2 값은 0보다 크거나 101보다 작아야 함.");
+        }
+        return n1 % n2;
+    }
+
 }
 
