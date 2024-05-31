@@ -56,4 +56,22 @@ public class Exam001JavaTest {
                 .isInstanceOf(Exception.class);
 
     }
+
+    @Test
+    public void divide() throws Exception {
+        // given
+        MathExam math = new MathExam();
+
+        // when
+
+        // then
+
+        assertThat(2).isEqualTo(math.mathTest003(10, 5));
+        assertThat(3).isEqualTo(math.mathTest003(7, 2));
+        assertThatThrownBy(() -> math.mathTest003(-3, 10))
+                .isInstanceOf(Exception.class);
+        assertThatThrownBy(()  -> math.mathTest003(5, 130))
+                .isInstanceOf(Exception.class);
+
+    }
 }
