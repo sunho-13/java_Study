@@ -92,4 +92,21 @@ public class Exam001JavaTest {
         assertThatThrownBy(()  -> math.mathTest004(13, 10500))
                 .isInstanceOf(Exception.class);
     }
+
+    @Test
+    public void remain() throws Exception {
+        //  given
+        MathExam math = new MathExam();
+
+        //  when
+
+        //  then
+
+        assertThat(1).isEqualTo(math.mathTest005(3, 2));
+        assertThat(0).isEqualTo(math.mathTest005(10, 5));
+        assertThatThrownBy(()  -> math.mathTest005(-1, 50))
+                .isInstanceOf(Exception.class);
+        assertThatThrownBy(()  -> math.mathTest005(78, 180))
+                .isInstanceOf(Exception.class);
+    }
 }
