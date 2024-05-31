@@ -39,10 +39,10 @@ public class MathExam {
             throw new RuntimeException("num2 값은 -1보다 크거나 10001보다 작아야 함.");
         }
 
-        if(n2 == n1){
-            return -1;
-        }else{
+        if(n1 == n2){
             return 1;
+        }else{
+            return -1;
         }
 
     }
