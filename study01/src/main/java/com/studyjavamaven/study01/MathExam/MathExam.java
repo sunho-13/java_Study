@@ -1,7 +1,7 @@
 package com.studyjavamaven.study01.MathExam;
 
 public class MathExam {
-   public int subTest001(int n1, int n2) throws Exception {
+   public int exam120803(int n1, int n2) throws Exception {
         if( n1 < -50000 || n1 > 50000) {
             throw new Exception("num1 값은 -50000보다 크거나 50000보다 작아야 함.");
         }
@@ -11,7 +11,7 @@ public class MathExam {
         return n1 - n2;
     }
 
-    public int mathTest002(int n1, int n2) throws Exception {
+    public int exam120804(int n1, int n2) throws Exception {
         if( n1 < -1 || n1 > 100) {
             throw new Exception("num1 값은 -1보다 크거나 101보다 작아야 함.");
         }
@@ -21,7 +21,7 @@ public class MathExam {
         return n1 * n2;
     }
 
-    public int mathTest003(int n1, int n2) throws Exception {
+    public int exam120805(int n1, int n2) throws Exception {
         if( n1 < 0 || n1 > 100) {
             throw new Exception("num1 값은 0보다 크거나 101보다 작아야 함.");
         }
@@ -31,7 +31,7 @@ public class MathExam {
         return n1 / n2;
     }
 
-    public int mathTest004(int n1, int n2) throws Exception {
+    public int exam120807(int n1, int n2) throws Exception {
         if( n1 < -1 || n1 > 10000) {
             throw new Exception("num1 값은 -1보다 크거나 10001보다 작아야 함.");
         }
@@ -47,7 +47,7 @@ public class MathExam {
 
     }
 
-    public int mathTest005(int n1, int n2) throws Exception {
+    public int exam120810(int n1, int n2) throws Exception {
         if( n1 < 0 || n1 > 101) {
             throw new Exception("num1 값은 0보다 크거나 101보다 작아야 함.");
         }
@@ -86,5 +86,27 @@ public class MathExam {
 
        return year-age+1;
     }
+
+    public int exam120829(int angle) throws Exception{
+
+       if ( angle < 1 || angle > 181){
+           throw new Exception("각도는 1보다 작거나 180보다 커선 안 됩니다.");
+       }
+
+       int result = 0;
+       if ( angle < 90 ){
+           result = 1;
+       }else if ( angle == 90 ){
+           result = 2;
+       }else if ( angle < 180){
+           result = 3;
+       }else {
+           result = 4;
+       }
+
+       return result;
+    }
+
+
 }
 
