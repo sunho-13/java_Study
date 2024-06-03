@@ -133,7 +133,7 @@ public class Exam001JavaTest {
 
     @Test
     public void exam120820() throws Exception{
-        System.out.println("exam");
+        System.out.println("exam120820");
         MathExam math = new MathExam();
 
         assertThat(math.exam120820(40)).isEqualTo(1983);
@@ -149,7 +149,7 @@ public class Exam001JavaTest {
 
     @Test
     public void exam120829() throws Exception {
-
+        System.out.println("exam1208209");
         MathExam math = new MathExam();
 
         assertThat(math.exam120829(70)).isEqualTo(1);
@@ -160,6 +160,22 @@ public class Exam001JavaTest {
         System.out.println(ex.toString());
 
         Throwable ex1 = assertThrows(Exception.class, () -> math.exam120829(183));
+        System.out.println(ex1.toString());
+
+    }
+
+    @Test
+    public void exam120831() throws Exception {
+        System.out.println("exam120831");
+        MathExam math = new MathExam();
+
+        assertThat(math.exam120831(10)).isEqualTo(30);
+        assertThat(math.exam120831(4)).isEqualTo(6);
+
+        Throwable ex = assertThrows(Exception.class, () -> math.exam120831(0));
+        System.out.println(ex.toString());
+
+        Throwable ex1 = assertThrows(Exception.class, () -> math.exam120831(1100));
         System.out.println(ex1.toString());
 
     }
