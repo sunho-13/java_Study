@@ -57,5 +57,24 @@ public class MathExam {
         return n1 % n2;
     }
 
+    public double exam120817(int[] numbers) throws Exception {
+       if ( numbers == null ){
+           throw new Exception("numbers는 null이 아니어야 합니다.");
+       }
+       if ( numbers.length < 1 || numbers.length > 100 ){
+           throw new Exception("numbers 배열 크기는 0보다 크거나 101보다 작아야 합니다.");
+       }
+       double sum = 0.0d;
+
+       for( int i = 0; i<numbers.length; i++ ){
+           if (numbers[i] < 0 || numbers[i] > 1000){
+               throw new Exception(String.format("numbers[] 값은 -1보다 크고 1001보다 작아야 합니다."));
+           }
+           sum+=numbers[i];
+       }
+        double result = sum / numbers.length;
+        return result;
+    }
+
 }
 
