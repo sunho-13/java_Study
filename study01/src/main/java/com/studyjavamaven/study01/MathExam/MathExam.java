@@ -94,6 +94,7 @@ public class MathExam {
        }
 
        int result = 0;
+
        if ( angle < 90 ){
            result = 1;
        }else if ( angle == 90 ){
@@ -107,6 +108,23 @@ public class MathExam {
        return result;
     }
 
+    public int exam120831(int n) throws Exception{
+
+       if ( n < 1 || n >1000){
+           throw new Exception("n의 값은 1보다 작거나 1000보다 커선 안 된다.");
+       }
+
+       int sum = 0;
+
+       for(int i = 0; i <= n; i++) {
+           if (i % 2 != 0) {
+               continue;
+           }
+           sum += i;
+       }
+
+       return sum;
+    }
 
 }
 
