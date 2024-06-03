@@ -1,7 +1,6 @@
 package com.studyjavamaven.study01;
 
 import com.studyjavamaven.study01.MathExam.MathExam;
-import net.bytebuddy.implementation.bind.MethodDelegationBinder;
 import org.junit.jupiter.api.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;
@@ -11,7 +10,7 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 
 public class Exam001JavaTest {
     @Test
-    public void subtract001() throws Exception {
+    public void exam120803() throws Exception {
         // given    테스트하기 위한 준비 동작
         MathExam math = new MathExam();
         /*int num1 = 2;
@@ -22,43 +21,43 @@ public class Exam001JavaTest {
       /*  int actual = subTest001(num1, num2);*/
 
         // then     실제값과 기대값을 비교해서 테스트
-        assertThat(math.subTest001(2, 3)).isEqualTo(-1);
-        assertThat(math.subTest001(100, 2)).isEqualTo(98);
-        assertThat(math.subTest001(10, 7)).isEqualTo(3);
-        assertThat(math.subTest001(100, 70)).isNotEqualTo(10);
-        assertThat(math.subTest001(100, 70)).isLessThan(31);
-        assertThat(math.subTest001(1000, 700)).isGreaterThan(299);
+        assertThat(math.exam120803(2, 3)).isEqualTo(-1);
+        assertThat(math.exam120803(100, 2)).isEqualTo(98);
+        assertThat(math.exam120803(10, 7)).isEqualTo(3);
+        assertThat(math.exam120803(100, 70)).isNotEqualTo(10);
+        assertThat(math.exam120803(100, 70)).isLessThan(31);
+        assertThat(math.exam120803(1000, 700)).isGreaterThan(299);
 
 
         //Exception 예외가 발생해야지만 정상 동작으로 인식
-        assertThatThrownBy(() -> math.subTest001(70000, 7))
+        assertThatThrownBy(() -> math.exam120803(70000, 7))
                 .isInstanceOf(Exception.class);
         // RuntimeException 예외가 발생해야지만 정상 동작으로 인식
         Throwable exception = assertThrows(RuntimeException.class, ()-> {
-            math.subTest001(2330,50002);
+            math.exam120803(2330,50002);
         });
         System.out.println(exception.toString());
     }
 
     @Test
-    public void multiply001() throws Exception {
+    public void exam120804() throws Exception {
         // given
         MathExam math = new MathExam();
         // when
 
         // then
 
-        assertThat(math.mathTest002(3, 4)).isEqualTo(12);
-        assertThat(math.mathTest002(27, 19)).isEqualTo(513);
-        assertThatThrownBy(() -> math.mathTest002(-2, 10))
+        assertThat(math.exam120804(3, 4)).isEqualTo(12);
+        assertThat(math.exam120804(27, 19)).isEqualTo(513);
+        assertThatThrownBy(() -> math.exam120804(-2, 10))
                 .isInstanceOf(Exception.class);
-        assertThatThrownBy(() -> math.mathTest002(10, 101))
+        assertThatThrownBy(() -> math.exam120804(10, 101))
                 .isInstanceOf(Exception.class);
 
     }
 
     @Test
-    public void divide() throws Exception {
+    public void exam120805() throws Exception {
         // given
         MathExam math = new MathExam();
 
@@ -66,17 +65,17 @@ public class Exam001JavaTest {
 
         // then
 
-        assertThat(math.mathTest003(10, 5)).isEqualTo(2);
-        assertThat(math.mathTest003(7, 2)).isEqualTo(3);
-        assertThatThrownBy(() -> math.mathTest003(-3, 10))
+        assertThat(math.exam120805(10, 5)).isEqualTo(2);
+        assertThat(math.exam120805(7, 2)).isEqualTo(3);
+        assertThatThrownBy(() -> math.exam120805(-3, 10))
                 .isInstanceOf(Exception.class);
-        assertThatThrownBy(()  -> math.mathTest003(5, 130))
+        assertThatThrownBy(()  -> math.exam120805(5, 130))
                 .isInstanceOf(Exception.class);
 
     }
 
     @Test
-    public void compare() throws Exception {
+    public void exam120807() throws Exception {
         //  given
         MathExam math = new MathExam();
 
@@ -84,17 +83,17 @@ public class Exam001JavaTest {
 
         //  then
 
-        assertThat(math.mathTest004(2, 3)).isEqualTo(-1);
-        assertThat(math.mathTest004(11, 11)).isEqualTo(1);
-        assertThat(math.mathTest004(7, 99)).isEqualTo(-1);
-        assertThatThrownBy(()  -> math.mathTest004(-5, 300))
+        assertThat(math.exam120807(2, 3)).isEqualTo(-1);
+        assertThat(math.exam120807(11, 11)).isEqualTo(1);
+        assertThat(math.exam120807(7, 99)).isEqualTo(-1);
+        assertThatThrownBy(()  -> math.exam120807(-5, 300))
                 .isInstanceOf(Exception.class);
-        assertThatThrownBy(()  -> math.mathTest004(13, 10500))
+        assertThatThrownBy(()  -> math.exam120807(13, 10500))
                 .isInstanceOf(Exception.class);
     }
 
     @Test
-    public void remain() throws Exception {
+    public void exam120810() throws Exception {
         //  given
         MathExam math = new MathExam();
 
@@ -102,11 +101,11 @@ public class Exam001JavaTest {
 
         //  then
 
-        assertThat(math.mathTest005(3, 2)).isEqualTo(1);
-        assertThat(math.mathTest005(10, 5)).isEqualTo(0);
-        assertThatThrownBy(()  -> math.mathTest005(-1, 50))
+        assertThat(math.exam120810(3, 2)).isEqualTo(1);
+        assertThat(math.exam120810(10, 5)).isEqualTo(0);
+        assertThatThrownBy(()  -> math.exam120810(-1, 50))
                 .isInstanceOf(Exception.class);
-        assertThatThrownBy(()  -> math.mathTest005(78, 180))
+        assertThatThrownBy(()  -> math.exam120810(78, 180))
                 .isInstanceOf(Exception.class);
     }
 
@@ -146,5 +145,22 @@ public class Exam001JavaTest {
         Throwable ex1 = assertThrows(Exception.class, () -> math.exam120820(123));
         System.out.println(ex1.toString());
         assertThat(math.exam120820(40)).isEqualTo(1983);
+    }
+
+    @Test
+    public void exam120829() throws Exception {
+
+        MathExam math = new MathExam();
+
+        assertThat(math.exam120829(70)).isEqualTo(1);
+        assertThat(math.exam120829(91)).isEqualTo(3);
+        assertThat(math.exam120829(180)).isEqualTo(4);
+
+        Throwable ex = assertThrows(Exception.class, () -> math.exam120829(0));
+        System.out.println(ex.toString());
+
+        Throwable ex1 = assertThrows(Exception.class, () -> math.exam120829(183));
+        System.out.println(ex1.toString());
+
     }
 }
