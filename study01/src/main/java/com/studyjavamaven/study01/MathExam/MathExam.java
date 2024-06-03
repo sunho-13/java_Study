@@ -76,5 +76,15 @@ public class MathExam {
         return result;
     }
 
+    public int exam120820(int age) throws Exception {
+
+       if ( age < 1 || age > 120) {
+           throw new Exception("나이는 1보다 작거나 120보다 커선 안 됩니다.");
+       }
+
+       int year = 2022;
+
+       return year-age+1;
+    }
 }
 
