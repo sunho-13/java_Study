@@ -22,12 +22,12 @@ public class Exam001JavaTest {
       /*  int actual = subTest001(num1, num2);*/
 
         // then     실제값과 기대값을 비교해서 테스트
-        assertThat(-1).isEqualTo(math.subTest001(2, 3));
-        assertThat(98).isEqualTo(math.subTest001(100, 2));
-        assertThat(3).isEqualTo(math.subTest001(10, 7));
-        assertThat(10).isNotEqualTo(math.subTest001(100, 70));
-        assertThat(29).isLessThan(math.subTest001(100, 70));
-        assertThat(301).isGreaterThan(math.subTest001(1000, 700));
+        assertThat(math.subTest001(2, 3)).isEqualTo(-1);
+        assertThat(math.subTest001(100, 2)).isEqualTo(98);
+        assertThat(math.subTest001(10, 7)).isEqualTo(3);
+        assertThat(math.subTest001(100, 70)).isNotEqualTo(10);
+        assertThat(math.subTest001(100, 70)).isLessThan(31);
+        assertThat(math.subTest001(1000, 700)).isGreaterThan(299);
 
 
         //Exception 예외가 발생해야지만 정상 동작으로 인식
@@ -48,8 +48,8 @@ public class Exam001JavaTest {
 
         // then
 
-        assertThat(12).isEqualTo(math.mathTest002(3, 4));
-        assertThat(513).isEqualTo(math.mathTest002(27, 19));
+        assertThat(math.mathTest002(3, 4)).isEqualTo(12);
+        assertThat(math.mathTest002(27, 19)).isEqualTo(513);
         assertThatThrownBy(() -> math.mathTest002(-2, 10))
                 .isInstanceOf(Exception.class);
         assertThatThrownBy(() -> math.mathTest002(10, 101))
@@ -66,8 +66,8 @@ public class Exam001JavaTest {
 
         // then
 
-        assertThat(2).isEqualTo(math.mathTest003(10, 5));
-        assertThat(3).isEqualTo(math.mathTest003(7, 2));
+        assertThat(math.mathTest003(10, 5)).isEqualTo(2);
+        assertThat(math.mathTest003(7, 2)).isEqualTo(3);
         assertThatThrownBy(() -> math.mathTest003(-3, 10))
                 .isInstanceOf(Exception.class);
         assertThatThrownBy(()  -> math.mathTest003(5, 130))
@@ -84,9 +84,9 @@ public class Exam001JavaTest {
 
         //  then
 
-        assertThat(-1).isEqualTo(math.mathTest004(2, 3));
-        assertThat(1).isEqualTo(math.mathTest004(11, 11));
-        assertThat(-1).isEqualTo(math.mathTest004(7, 99));
+        assertThat(math.mathTest004(2, 3)).isEqualTo(-1);
+        assertThat(math.mathTest004(11, 11)).isEqualTo(1);
+        assertThat(math.mathTest004(7, 99)).isEqualTo(-1);
         assertThatThrownBy(()  -> math.mathTest004(-5, 300))
                 .isInstanceOf(Exception.class);
         assertThatThrownBy(()  -> math.mathTest004(13, 10500))
@@ -102,8 +102,8 @@ public class Exam001JavaTest {
 
         //  then
 
-        assertThat(1).isEqualTo(math.mathTest005(3, 2));
-        assertThat(0).isEqualTo(math.mathTest005(10, 5));
+        assertThat(math.mathTest005(3, 2)).isEqualTo(1);
+        assertThat(math.mathTest005(10, 5)).isEqualTo(0);
         assertThatThrownBy(()  -> math.mathTest005(-1, 50))
                 .isInstanceOf(Exception.class);
         assertThatThrownBy(()  -> math.mathTest005(78, 180))
@@ -115,8 +115,8 @@ public class Exam001JavaTest {
         MathExam math = new MathExam();
         int[] numbers = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
 
-        assertThat(5.5).isEqualTo((math.exam120817(numbers)));
-        assertThat(94.0).isEqualTo((math.exam120817(new int[] {89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99})));
+        assertThat(math.exam120817(numbers)).isEqualTo(5.5);
+        assertThat(math.exam120817(new int[] {89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99})).isEqualTo(94.0);
         assertThatThrownBy(() -> math.exam120817(new int[] {0, 1000, 2000}))
                 .isInstanceOf(Exception.class);
         //assertThatThrownBy(() -> math.exam120817(new int[] {}))
