@@ -131,4 +131,20 @@ public class Exam001JavaTest {
         System.out.println(exception.toString());
 
     }
+
+    @Test
+    public void exam120820() throws Exception{
+        System.out.println("exam");
+        MathExam math = new MathExam();
+
+        assertThat(math.exam120820(40)).isEqualTo(1983);
+        assertThat(math.exam120820(23)).isEqualTo(2000);
+
+        Throwable ex = assertThrows(Exception.class, () -> math.exam120820(0));
+        System.out.println(ex.toString());
+
+        Throwable ex1 = assertThrows(Exception.class, () -> math.exam120820(123));
+        System.out.println(ex1.toString());
+        assertThat(math.exam120820(40)).isEqualTo(1983);
+    }
 }
