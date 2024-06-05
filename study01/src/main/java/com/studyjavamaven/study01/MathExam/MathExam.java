@@ -126,5 +126,30 @@ public class MathExam {
        return sum;
     }
 
+    public int[] exam120813(int n) throws Exception{
+
+       if(n<1 || n>100){
+           throw new Exception("n의 값은 1보다 작거나 100보다 커선 안 된다.");
+       }
+
+       int length = (n +1) / 2;
+       int[] result = new int[length];
+       int index = 0;
+
+       for(int i = 1; i <= n; i +=2){
+
+           result[index++] = i;
+       }
+       /*
+        int ord = 1;
+        for (int i=0; i<length; i++){
+            result[i] = ord;
+            ord +=2;
+        }*/
+
+
+       return result;
+    }
+
 }
 
