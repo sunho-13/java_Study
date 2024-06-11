@@ -3,6 +3,9 @@ package com.studyjavamaven.study01;
 import com.studyjavamaven.study01.MathExam.MathExam;
 import org.junit.jupiter.api.Test;
 
+import java.util.Date;
+import java.util.Scanner;
+
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
 import static org.junit.jupiter.api.Assertions.assertThrows;
@@ -191,4 +194,124 @@ public class Exam001JavaTest {
         Throwable ex = assertThrows(Exception.class, () -> math.exam120831(0));
         System.out.println(ex.toString());
     }
+
+    @Test
+    public void numberPrint() throws Exception {
+        int x = 0b1011;
+        int y = 0206;
+        int z = 0x2A0F;
+        char a = 'A', b = 'B', c = 'C';
+        long l = 0L;
+
+
+
+        System.out.println(String.format("10진수 : x=%d, y=%d, z=%d", x, y, z));
+        System.out.println(String.format("8진수 : x=%o, y=%o, z=%o", x, y, z));
+        System.out.println(String.format("16진수 : x=%X, y=%X, z=%X", x, y, z));
+        System.out.println(String.format("Char : x=%c, y=%c, z=%c", x, y, z));
+
+        System.out.println(String.format("10진수 : a=%d, b=%d, c=%d", (int)a, (int)b, (int)c ));
+        System.out.println(String.format("8진수 : a=%o, b=%o, c=%o", (int)a, (int)b, (int)c ));
+        System.out.println(String.format("16진수 : a=%X, b=%X, c=%X", (int)a, (int)b, (int)c ));
+        System.out.println(String.format("Char : a=%c, b=%c, c=%c", a, b, c ));
+    }
+
+   /* @Test
+    public void exam1045() throws Exception{
+        Scanner sc = new Scanner(System.in);
+
+        System.out.println("정수 2개를 입력하세요(띄어쓰기 구분) : ");
+        String input = sc.nextLine();
+
+        String[] inputs = input.split(" ");
+
+        int a = Integer.parseInt(inputs[0]);
+        int b = Integer.parseInt(inputs[1]);
+
+        if(a<0){
+            throw new Exception("a는 0보다 커야 합니다.");
+        }
+        if(b == 0){
+            throw new Exception("b는 0이 아니어야 합니다.");
+        }
+
+        int sum=a+b;
+        int sub=a-b;
+        int multi=a*b;
+        int divide=a/b;
+        int remain=a%b;
+        double result=(double)a/b;
+
+        String Rresult = String.format("%.2f", result);
+
+        System.out.println("합: " + sum);
+        System.out.println("차: " + sub);
+        System.out.println("곱: " + multi);
+        System.out.println("몫: " + divide);
+        System.out.println("나머지: "+remain);
+        System.out.println("나눈 값: " + Rresult);
+
+        sc.close();
+
+    }*/
+
+/*    @Test
+    public void exam1046() throws Exception {
+
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("정수 3개 입력(띄어쓰기 구분) : ");
+        String input = sc.nextLine();
+
+        String[] inputs = input.split(" ");
+
+        int a = Integer.parseInt(inputs[0]);
+        int b = Integer.parseInt(inputs[1]);
+        int c = Integer.parseInt(inputs[2]);
+
+        int sum=a+b+c;
+        double avr=(double)sum/inputs.length;
+
+        String result=String.format("%.1f",avr);
+
+
+        System.out.println("합 : " + sum);
+        System.out.println("평균 : " + result);
+
+
+        sc.close();
+
+    }*/
+
+/*    @Test
+    public void exam1085() {
+
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("");
+        String input = sc.nextLine();
+
+        String[] inputs = input.split(" ");
+
+        int h = Integer.parseInt(inputs[0]);
+        int b = Integer.parseInt(inputs[1]);
+        int c = Integer.parseInt(inputs[2]);
+        int s = Integer.parseInt(inputs[3]);
+
+        long byteSize = (long)h*b*c*s/8;
+        double KB = (double)byteSize/1024;
+        double MB = KB/1024;
+
+        String result = String.format("%.1f", MB);
+
+        System.out.println(result+" MB");
+
+        sc.close();
+
+    }*/
+
+
+
+
+
 }
