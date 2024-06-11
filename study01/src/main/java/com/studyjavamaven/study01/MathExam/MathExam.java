@@ -151,5 +151,24 @@ public class MathExam {
        return result;
     }
 
+    public int[] exam1045(int a, int b) throws Exception{
+
+       if(a<0){
+           throw new Exception("a는 0보다 커야 합니다.");
+       }
+       if(b > 2147483647){
+           throw new Exception("b는 2147483647보다 작야아 합니다.");
+       }
+
+       int sum=a+b;
+       int sub=a-b;
+       int multi=a*b;
+       int divide=a/b;
+       double remain=(double)a%b;
+
+
+       return null;
+    }
+
 }
 
