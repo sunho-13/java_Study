@@ -1,9 +1,31 @@
-package demoJson;
 
+package demoJson;
 import java.util.ArrayList;
 import java.util.List;
 
-public class AccountSerivceImpl {
+public class AccountServiceImpl implements AccountService {
+    AccountRepository accountRepository;
+
+    public AccountServiceImpl(String arg1, String fileName) throws Exception {
+        if ( "-j".equals(arg1) ) {
+            accountRepository = new AccountJSONRepository(fileName);
+        } else if ( "-t".equals(arg1) ) {
+            accountRepository = new AccountFileRepository(fileName);
+        } else {
+            throw new Exception( "Error : You need program arguments (-j/-t) (filename) !");
+        }
+    }
+
+    public void setInitRepository(String arg1, String fileName) throws Exception {
+        if ( "-j".equals(arg1) ) {
+            accountRepository = new AccountJSONRepository(fileName);
+        } else if ( "-t".equals(arg1) ) {
+            accountRepository = new AccountFileRepository(fileName);
+        } else {
+            throw new Exception( "Error : You need program arguments (-j/-t) (filename) !");
+        }
+    }
+
     /**
      * 계좌 배열 인스턴스 변수 (객체 프로퍼티, 인스턴스 필드)
      */
@@ -104,5 +126,13 @@ public class AccountSerivceImpl {
             }
         }
         return null;
+    }
+
+    public void loadData(List<Account> list) throws Exception {
+        accountRepository.loadJson(list);
+    }
+
+    public void saveData(List<Account> list) throws Exception {
+        accountRepository.saveJson(list);
     }
 }

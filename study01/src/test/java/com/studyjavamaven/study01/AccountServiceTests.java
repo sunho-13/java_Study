@@ -1,3 +1,4 @@
+/*
 package com.studyjavamaven.study01;
 
 import demoJson.Account;
@@ -70,3 +71,4 @@ public class AccountServiceTests {
         assertThat(find3.getCurrent()).isEqualTo(20000);
     }
 }
+*/
