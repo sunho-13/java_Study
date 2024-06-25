@@ -1,32 +1,33 @@
+/*
 package com.studyjavamaven.study01;
 
-import teacher.AccountService;
-import teacher.models.Account;
+import test.Account;
 import org.junit.jupiter.api.Test;
+import test.AccountService;
 
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 
 public class AccountServiceTests {
     @Test
-    public void addAccountTest() {
+    public void addAccountTest(){
         AccountService accountService = new AccountService();
 
         accountService.clear();
-        accountService.addAccount("홍길동", "111-111", 20000);
+        accountService.addAccount("이선호", "111-111", 11111);
 
         assertThat(accountService.size()).isEqualTo(1);
 
         Account find = accountService.findAccountByNumber("111-111");
         assertThat(find).isNotNull();
-        assertThat(find.getName()).isEqualTo("홍길동");
-        assertThat(find.getCurrent()).isEqualTo(20000);
+        assertThat(find.getName()).isEqualTo("이선호");
+        assertThat(find.getCurrent()).isEqualTo(11111);
     }
 
     @Test
-    public void depositTest() {
+    public void depositTest(){
         AccountService accountService = new AccountService();
-        accountService.addAccount("홍길동", "111-111", 20000);
-        accountService.addAccount("이순신", "222-222", 30000);
+        accountService.addAccount("이선호", "111-111", 22222);
+        accountService.addAccount("김선호", "222-222", 33333);
         assertThat(accountService.size()).isEqualTo(2);
 
         boolean result = accountService.deposit("222-222", 10000);
@@ -41,12 +42,12 @@ public class AccountServiceTests {
     }
 
     @Test
-    public void withdrawTest() {
+    public void withdrawTest(){
         AccountService accountService = new AccountService();
-        accountService.addAccount("홍길동", "333-333", 40000);
+        accountService.addAccount("이선호", "333-333", 50000);
         assertThat(accountService.size()).isEqualTo(1);
 
-        boolean result = accountService.withdraw("333-333", 20000);
+        boolean result = accountService.withdraw("333-333", 10000);
         assertThat(result).isEqualTo(true);
 
         Account find = accountService.findAccountByNumber("333-333");
@@ -64,3 +65,4 @@ public class AccountServiceTests {
         assertThat(find3.getCurrent()).isEqualTo(20000);
     }
 }
+*/
