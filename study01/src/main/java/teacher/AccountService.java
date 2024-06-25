@@ -1,3 +1,4 @@
+/*
 package teacher;
 
 import teacher.models.Account;
@@ -62,3 +63,4 @@ public class AccountService {
         return null;
     }
 }
+*/
