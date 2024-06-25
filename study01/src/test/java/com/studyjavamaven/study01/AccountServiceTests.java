@@ -1,13 +1,18 @@
-/*
 package com.studyjavamaven.study01;
 
-import test.Account;
+import demoJson.Account;
 import org.junit.jupiter.api.Test;
-import test.AccountService;
+import demoJson.AccountService;
 
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 
 public class AccountServiceTests {
+
+    AccountSerivce accountService;
+
+    @BeforEach
+    public void
+
     @Test
     public void addAccountTest(){
         AccountService accountService = new AccountService();
@@ -65,4 +70,3 @@ public class AccountServiceTests {
         assertThat(find3.getCurrent()).isEqualTo(20000);
     }
 }
-*/

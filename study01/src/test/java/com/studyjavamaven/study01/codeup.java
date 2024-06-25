@@ -1,3 +1,4 @@
+/*
 package com.studyjavamaven.study01;
 
 import org.junit.jupiter.api.Test;
@@ -49,4 +50,4 @@ class Student {
     public int getScore() {
         return score;
     }
-}
+}*/

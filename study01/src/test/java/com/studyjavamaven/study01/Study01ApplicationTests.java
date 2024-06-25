@@ -1,3 +1,4 @@
+/*
 package com.studyjavamaven.study01;
 
 import org.junit.jupiter.api.Test;
@@ -11,3 +12,4 @@ class Study01ApplicationTests {
 	}
 
 }
+*/

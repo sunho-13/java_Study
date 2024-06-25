@@ -1,3 +1,4 @@
+/*
 package test;
 
 import lombok.Getter;
@@ -24,3 +25,4 @@ public class Account{
                 , this.name, this.bankNumber, this.current);
     }
 }
+*/

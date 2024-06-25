@@ -1,3 +1,4 @@
+/*
 package practice;
 
 public class PrinterExample2 {
@@ -7,6 +8,8 @@ public class PrinterExample2 {
         Printer.println(5.7);
         Printer.println("홍길동");
     }
+*/
+/**//*
 
     public static class Printer {
         public static void println(int x){
@@ -26,3 +29,4 @@ public class PrinterExample2 {
         }
     }
 }
+*/

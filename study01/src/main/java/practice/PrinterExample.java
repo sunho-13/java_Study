@@ -1,3 +1,4 @@
+/*
 package practice;
 
 public class PrinterExample {
@@ -27,3 +28,4 @@ public class PrinterExample {
         }
     }
 }
+*/

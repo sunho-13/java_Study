@@ -1,3 +1,4 @@
+/*
 package com.studyjavamaven.study01;
 
 import com.studyjavamaven.study01.MathExam.MathExam;
@@ -16,12 +17,16 @@ public class Exam001JavaTest {
     public void exam120803() throws Exception {
         // given    테스트하기 위한 준비 동작
         MathExam math = new MathExam();
-        /*int num1 = 2;
+        */
+/*int num1 = 2;
         int num2 = 3;
-        int expected = -1;*/
+        int expected = -1;*//*
+
 
         // when     테스트를 실시
-      /*  int actual = subTest001(num1, num2);*/
+      */
+/*  int actual = subTest001(num1, num2);*//*
+
 
         // then     실제값과 기대값을 비교해서 테스트
         assertThat(math.exam120803(2, 3)).isEqualTo(-1);
@@ -216,7 +221,8 @@ public class Exam001JavaTest {
         System.out.println(String.format("Char : a=%c, b=%c, c=%c", a, b, c ));
     }
 
-   /* @Test
+   */
+/* @Test
     public void exam1045() throws Exception{
         Scanner sc = new Scanner(System.in);
 
@@ -253,8 +259,10 @@ public class Exam001JavaTest {
 
         sc.close();
 
-    }*/
+    }*//*
 
+
+*/
 /*    @Test
     public void exam1046() throws Exception {
 
@@ -281,8 +289,10 @@ public class Exam001JavaTest {
 
         sc.close();
 
-    }*/
+    }*//*
 
+
+*/
 /*    @Test
     public void exam1085() {
 
@@ -308,10 +318,12 @@ public class Exam001JavaTest {
 
         sc.close();
 
-    }*/
+    }*//*
+
 
 
 
 
 
 }
+*/
