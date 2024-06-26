@@ -1,3 +1,4 @@
+/*
 
 package demoJson;
 
@@ -30,3 +31,4 @@ public class Account {
                 , this.name, this.bankNumber, this.current);
     }
 }
+*/

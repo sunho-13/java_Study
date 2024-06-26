@@ -1,3 +1,4 @@
+/*
 
 package demoJson;
 
@@ -16,3 +17,4 @@ public interface AccountService {
     void loadData(List<Account> list) throws Exception;
     void saveData(List<Account> list) throws Exception;
 }
+*/
