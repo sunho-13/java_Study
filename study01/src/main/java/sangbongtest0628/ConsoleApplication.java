@@ -24,6 +24,11 @@ public class ConsoleApplication {
     public int getChoice(Scanner input) throws Exception {
         System.out.print("선택 > ");
         String a = input.nextLine();
+
+        if (!a.matches("\\d+")) {
+            throw new IllegalArgumentException("에러: 잘못된 입력입니다.");
+        }
+
         return Integer.parseInt(a);
     }
 
@@ -85,23 +90,42 @@ public class ConsoleApplication {
         }
     }
 
+
     public void update(Scanner input) throws Exception {
         IPhoneBook result = getFindIdConsole(input, "수정할");
         if (result == null) {
-            System.out.println("에러: ID 데이터 가 존재하지 않습니다.");
+            System.out.println("에러: ID 데이터가 존재하지 않습니다.");
             return;
         }
-        System.out.print("연락처 이름 :");
+
+        System.out.print("연락처 이름: ");
         String name = input.nextLine();
+        if (name.isEmpty()) {
+            name = result.getName();
+        }
+
         EPhoneGroup group = this.getGroupFromScanner(input, "");
-        System.out.print("전화번호 :");
+
+        System.out.print("전화번호: ");
         String phone = input.nextLine();
-        System.out.print("이메일 :");
+        if (phone.isEmpty()) {
+            phone = result.getPhoneNumber();
+        }
+
+        System.out.print("이메일: ");
         String email = input.nextLine();
+        if (email.isEmpty()) {
+            email = result.getEmail();
+        }
+
         IPhoneBook update = PhoneBook.builder()
-                .id(result.getId()).name(name)
+                .id(result.getId())
+                .name(name)
                 .group(group)
-                .phoneNumber(phone).email(email).build();
+                .phoneNumber(phone)
+                .email(email)
+                .build();
+
         if (this.phoneBookService.update(update.getId(), update)) {
             this.phoneBookService.saveData();
             System.out.println("결과: 데이터 수정 성공되었습니다.");
@@ -130,11 +154,11 @@ public class ConsoleApplication {
             try {
                 l = Long.parseLong(id);
             } catch (Exception ex) {
-                System.out.println("ID 번호를 숫자로만 입력하세요.");
+                System.out.println("에러: ID 번호를 숫자로만 입력하세요.");
             }
         } while ( l <= 0 );
-        IPhoneBook iPhoneBook = (IPhoneBook)this.phoneBookService.findById(l);
-        return iPhoneBook;
+        IPhoneBook IPhoneBook = (IPhoneBook)this.phoneBookService.findById(l);
+        return IPhoneBook;
     }
 
     private void printList(List<IPhoneBook> array) {
