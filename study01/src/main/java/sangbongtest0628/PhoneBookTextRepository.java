@@ -28,7 +28,7 @@ public class PhoneBookTextRepository implements IPhoneBookRepository<IPhoneBook>
         if(object == null){
             throw new Exception("Error : Input object is null");
         }
-        String str = String.format("%d, %s, %s, %s, %s\n"
+        String str = String.format("%d,%s,%s,%s,%s\n"
             , object.getId(), object.getName(), object.getGroup(), object.getPhoneNumber(), object.getEmail());
         return str;
     }
@@ -49,7 +49,7 @@ public class PhoneBookTextRepository implements IPhoneBookRepository<IPhoneBook>
             writer.write(str);
         }
         writer.close();
-        return false;
+        return true;
     }
 
     @Override
@@ -68,6 +68,6 @@ public class PhoneBookTextRepository implements IPhoneBookRepository<IPhoneBook>
             IPhoneBook object = this.getObjectFromText(sLine);
             listData.add(object);
         }
-        return false;
+        return true;
     }
 }

@@ -5,47 +5,47 @@ import org.json.simple.parser.JSONParser;
 import org.junit.jupiter.api.Test;
 import sangbongtest0628.*;
 
-import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
+import org.json.simple.JSONObject;
+import org.json.simple.parser.JSONParser;
+import org.junit.jupiter.api.Test;
+
+import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
 public class PhoneBookRepositoryTests {
     @Test
     public void jsonRepositoryTest() throws Exception {
         PhoneBookJsonRepository repository = new PhoneBookJsonRepository("test.json");
-        //given, when
-        //Throwable ex = assertThrows(Exception.class, () -> repository.getObjectFromJson(""));
-        //System.out.println(ex.toString());
-
-        String json = "{\"phoneNumber\":\"010-0000-0000\",\"name\":\"이말자\",\"id\":7\"email\":\"asdfg@gm.com\",\"group\":\"Jobs\"}";
+        String json = "{\"phoneNumber\":\"010-0000-0000\",\"group\":\"Jobs\",\"name\":\"이말자\",\"id\":7,\"email\":\"asdfs@gm.com\"}";
         JSONParser jsonParser = new JSONParser();
-        IPhoneBook object = null;
-
         Object obj = jsonParser.parse(json);
+        IPhoneBook phoneBook = repository.getObjectFromJson((JSONObject)obj);
+        assertThat(phoneBook.getId()).isEqualTo(7L);
+        assertThat(phoneBook.getName()).isEqualTo("이말자");
+        assertThat(phoneBook.getGroup()).isEqualTo(EPhoneGroup.Jobs);
+        assertThat(phoneBook.getGroup().toString()).isEqualTo("Jobs");
+        assertThat(phoneBook.getPhoneNumber()).isEqualTo("010-0000-0000");
+        assertThat(phoneBook.getEmail()).isEqualTo("asdfs@gm.com");
 
-        object = repository.getObjectFromJson((JSONObject) obj);
-        assertThat(object.getId()).isEqualTo(7L);
-        assertThat(object.getName()).isEqualTo("이말자");
-        assertThat(object.getGroup()).isEqualTo(EPhoneGroup.Jobs);
-        assertThat(object.getPhoneNumber()).isEqualTo("010-0000-0000");
-        assertThat(object.getEmail()).isEqualTo("asdfg@gm.com");
-
-        IPhoneBook iPhoneBook2 = new PhoneBook();
-        iPhoneBook2.setId(88L);
-        iPhoneBook2.setName("폰북");
-        iPhoneBook2.setGroup(EPhoneGroup.Hobbies);
-        iPhoneBook2.setPhoneNumber("1111-2222");
-        iPhoneBook2.setEmail("abcdefg@daum.net");
-        JSONObject jobject = repository.getJsonFromObject(iPhoneBook2);
+        IPhoneBook phoneBook2 = new PhoneBook();
+        phoneBook2.setId(88L);
+        phoneBook2.setName("폰북");
+        phoneBook2.setGroup(EPhoneGroup.Hobbies);
+        phoneBook2.setPhoneNumber("1111-2222");
+        phoneBook2.setEmail("abcdefg@daum.net");
+        JSONObject jobject = repository.getJsonFromObject(phoneBook2);
         assertThat((Long)jobject.get("id")).isEqualTo(88L);
         assertThat((String)jobject.get("name")).isEqualTo("폰북");
+        assertThat(EPhoneGroup.valueOf((String)jobject.get("group"))).isEqualTo(EPhoneGroup.Hobbies);
         assertThat((String)jobject.get("group")).isEqualTo("Hobbies");
         assertThat((String)jobject.get("phoneNumber")).isEqualTo("1111-2222");
         assertThat((String)jobject.get("email")).isEqualTo("abcdefg@daum.net");
+        assertThat(jobject.toJSONString()).isEqualTo("{\"phoneNumber\":\"1111-2222\",\"name\":\"폰북\",\"id\":88,\"email\":\"abcdefg@daum.net\",\"group\":\"Hobbies\"}");
     }
 
     @Test
     public void textRepositoryTest() throws Exception {
-        PhoneBookTextRepository repository = new PhoneBookTextRepository("test.text");
+        PhoneBookTextRepository repository = new PhoneBookTextRepository("test.json");
         Throwable ex = assertThrows(Exception.class, () -> repository.getObjectFromText(""));
         System.out.println(ex.toString());
 
@@ -57,7 +57,6 @@ public class PhoneBookRepositoryTests {
         assertThat(phoneBook.getEmail()).isEqualTo("abcd@gmail.com");
 
         String str = repository.getTextFromObject(phoneBook);
-        assertThat(str).isEqualTo("3, 홍길동, Families, 010-1111-1111, abcd@gmail.com\n");
+        assertThat(str).isEqualTo("3,홍길동,Families,010-1111-1111,abcd@gmail.com\n");
     }
-
 }
