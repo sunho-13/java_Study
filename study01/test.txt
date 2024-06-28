@@ -1,3 +1,4 @@
 1,add1,Friends,11-1111-1111,add1@gmail.com
 3,add3,Hobbies,333-3333-3333,add3@gmail.com
 4,add4,Friends,444-4444-4444,add4@gmail.com
+5,ㄱ,Families,4,2
