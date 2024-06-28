@@ -1,12 +1,13 @@
-/*
-package sangbongtest0628;
+package test0628;
 
-import sangbongtest0628.PhoneBook;
+import test0628.PhoneBook;
 
 import java.util.List;
 import java.util.Scanner;
 
 public class ConsoleApplication {
+
+
     private IPhoneBookService<IPhoneBook> phoneBookService;
     public void setPhoneBookService(IPhoneBookService<IPhoneBook> phoneBookService) throws Exception {
         this.phoneBookService = phoneBookService;
@@ -198,5 +199,51 @@ public class ConsoleApplication {
         List<IPhoneBook> list = this.phoneBookService.getListFromEmail(findEmail);
         this.printList(list);
     }
+
+    public static void main(String[] args) throws Exception {
+        ConsoleApplication app = new ConsoleApplication();
+        Scanner scanner = new Scanner(System.in);
+
+        if (args.length != 2) {
+            System.out.println("오류: 잘못된 입력입니다.");
+            return;
+        }
+
+        String option = args[0];
+        String filename = args[1];
+        switch (option) {
+            case "-j":
+                app.saveToJsonFile(filename);
+                break;
+            case "-t":
+                app.saveToTextFile(filename);
+                break;
+            default:
+                System.out.println("오류: 잘못된 입력입니다.");
+                break;
+        }
+    }
+
+    private void saveToJsonFile(String filename) throws Exception {
+
+        List<IPhoneBook> phoneBooks = phoneBookService.getAllList();
+
+        PhoneBookJsonRepository jsonRepository = new PhoneBookJsonRepository(filename + ".json");
+        jsonRepository.saveData(phoneBooks);
+
+        System.out.println("데이터가 저장되었습니다.");
+    }
+
+    private void saveToTextFile(String filename) throws Exception {
+
+        List<IPhoneBook> phoneBooks = phoneBookService.getAllList();
+
+        PhoneBookTextRepository textRepository = new PhoneBookTextRepository(filename + ".txt");
+        textRepository.saveData(phoneBooks);
+
+        System.out.println("데이터가 저장되었습니다.");
+    }
+
 }
-*/
+
+

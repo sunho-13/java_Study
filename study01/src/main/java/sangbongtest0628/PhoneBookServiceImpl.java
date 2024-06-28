@@ -28,7 +28,9 @@ public class PhoneBookServiceImpl implements IPhoneBookService<IPhoneBook> {
         return this.list.size();
     }
 
-    */
+    *//*
+
+*/
 /*
 
     @Override
@@ -156,7 +158,8 @@ public class PhoneBookServiceImpl implements IPhoneBookService<IPhoneBook> {
     public boolean saveData() throws Exception {
         return this.phoneBookRepository.saveData(this.list);
     }
-}*/
+}*//*
+
 package sangbongtest0628;
 
 import sangbongtest0628.EPhoneGroup;
@@ -290,4 +293,4 @@ public class PhoneBookServiceImpl implements IPhoneBookService<IPhoneBook> {
     public boolean saveData() throws Exception {
         return this.phoneBookRepository.saveData(this.list);
     }
-}
+}*/

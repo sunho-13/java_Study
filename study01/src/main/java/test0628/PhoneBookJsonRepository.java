@@ -1,6 +1,4 @@
-/*
-package sangbongtest0628;
-
+package test0628;
 
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
@@ -89,4 +87,4 @@ public class PhoneBookJsonRepository implements IPhoneBookRepository<IPhoneBook>
         return true;
     }
 }
-*/
+

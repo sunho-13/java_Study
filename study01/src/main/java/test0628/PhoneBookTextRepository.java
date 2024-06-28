@@ -1,6 +1,4 @@
-/*
-package sangbongtest0628;
-
+package test0628;
 import java.io.*;
 import java.nio.charset.StandardCharsets;
 import java.util.List;
@@ -72,4 +70,4 @@ public class PhoneBookTextRepository implements IPhoneBookRepository<IPhoneBook>
         return true;
     }
 }
-*/
+

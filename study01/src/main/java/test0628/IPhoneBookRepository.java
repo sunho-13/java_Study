@@ -1,5 +1,4 @@
-/*
-package sangbongtest0628;
+package test0628;
 
 import org.json.simple.JSONObject;
 
@@ -9,4 +8,4 @@ public interface IPhoneBookRepository<T> {
     boolean saveData(List<T> listData) throws Exception ;
     boolean loadData(List<T> listData) throws Exception ;
 }
-*/
+

@@ -1,5 +1,4 @@
-/*
-package sangbongtest0628;
+package test0628;
 
 public interface IPhoneBook {
     Long getId();
@@ -17,4 +16,4 @@ public interface IPhoneBook {
     String getEmail();
     void setEmail(String email);
 }
-*/
+

@@ -1,6 +1,4 @@
-/*
-package sangbongtest0628;
-
+package test0628;
 import java.util.List;
 
 public interface IPhoneBookService<T> {
@@ -18,4 +16,4 @@ public interface IPhoneBookService<T> {
     List<T> getListFromEmail(String findEmail);
     boolean loadData() throws Exception;
     boolean saveData() throws Exception;
-}*/
+}

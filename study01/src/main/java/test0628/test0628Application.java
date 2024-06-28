@@ -1,11 +1,8 @@
-/*
-package sangbongtest0628;
-
-import sangbongtest0628.PhoneBookServiceImpl;
+package test0628;
 
 import java.util.Scanner;
 
-public class Sbtest0628Application {
+public class test0628Application {
     public static void main(String[] args) {
         if ( args.length < 2 ) {
             System.out.println("Error : You need program arguments (-j/-t) (filename) !");
@@ -16,7 +13,7 @@ public class Sbtest0628Application {
         boolean run = true;
 
         try {
-            application.setPhoneBookService(new PhoneBookServiceImpl(args[0], args[1]));
+            application.setPhoneBookService(new PhoneBookServiceImple(args[0], args[1]));
         } catch (Exception e) {
             throw new RuntimeException("Error : " + e.getMessage());
         }
@@ -64,4 +61,4 @@ public class Sbtest0628Application {
         }
     }
 }
-*/
+

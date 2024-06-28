@@ -1,5 +1,4 @@
-/*
-package sangbongtest0628;
+package test0628;
 
 public enum EPhoneGroup {
     Friends,
@@ -8,4 +7,4 @@ public enum EPhoneGroup {
     Jobs,
     Hobbies
 }
-*/
+
