@@ -1,5 +1,9 @@
-package test0628;
+/*
+package com.softagape.sbtest0628.make;
 
+import com.softagape.sbtest0628.EPhoneGroup;
+import com.softagape.sbtest0628.IPhoneBook;
+import com.softagape.sbtest0628.IPhoneBookRepository;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
@@ -12,25 +16,26 @@ import java.util.List;
 
 public class PhoneBookJsonRepository implements IPhoneBookRepository<IPhoneBook> {
     private String fileName;
-    public PhoneBookJsonRepository(String fileName){
+    public PhoneBookJsonRepository(String fileName) {
         this.fileName = fileName;
     }
+
     public IPhoneBook getObjectFromJson(JSONObject jsonObject) throws Exception {
-        if (jsonObject == null){
+        if ( jsonObject == null ) {
             throw new Exception("Error : Input jsonObject is null");
         }
         IPhoneBook object = new PhoneBook();
-        object.setId((Long)jsonObject.get("id"));
-        object.setName((String)jsonObject.get("name"));
-        object.setGroup(EPhoneGroup.valueOf((String)jsonObject.get("group")) );
-        object.setPhoneNumber((String) jsonObject.get("phoneNumber"));
-        object.setEmail((String) jsonObject.get("email"));
+        object.setId( (Long)jsonObject.get("id") );
+        object.setName( (String)jsonObject.get("name") );
+        object.setGroup( EPhoneGroup.valueOf((String)jsonObject.get("group")) );
+        object.setPhoneNumber( (String)jsonObject.get("phoneNumber") );
+        object.setEmail( (String)jsonObject.get("email") );
         return object;
     }
 
     public JSONObject getJsonFromObject(IPhoneBook object) throws Exception {
-        if(object == null){
-            throw new Exception("Error : Input objects is null");
+        if ( object == null ) {
+            throw new Exception("Error : Input object is null");
         }
         JSONObject jsonObject = new JSONObject();
         jsonObject.put("id", object.getId());
@@ -47,13 +52,16 @@ public class PhoneBookJsonRepository implements IPhoneBookRepository<IPhoneBook>
             return false;
         }
         JSONArray jsonArray = new JSONArray();
-        for(IPhoneBook object : listData){
+        for ( IPhoneBook object : listData ) {
             JSONObject jObject = this.getJsonFromObject(object);
             jsonArray.add(jObject);
         }
         JSONObject jroot = new JSONObject();
         jroot.put("root", jsonArray);
 
+        if (fileName == null || fileName.isEmpty()) {
+            return false;
+        }
         FileWriter fileWriter = new FileWriter(fileName, Charset.defaultCharset());
         fileWriter.write(jroot.toString());
         fileWriter.flush();
@@ -63,28 +71,25 @@ public class PhoneBookJsonRepository implements IPhoneBookRepository<IPhoneBook>
 
     @Override
     public boolean loadData(List<IPhoneBook> listData) throws Exception {
-
-        boolean accountList;
-        if (listData == null) {
+        if ( listData == null ) {
             return false;
         }
         JSONParser parser = new JSONParser();
         File file = new File(fileName);
-        if (!file.exists()) {
-            return true;
+        if ( !file.exists() ) {
+            return true;    // 파일이 없을때도 true 를 리턴하여 실행하도록 처리
         }
         FileReader reader = new FileReader(file, Charset.defaultCharset());
-        JSONObject jsonObject = (JSONObject) parser.parse(reader);
+        JSONObject jsonObject = (JSONObject)parser.parse(reader);
         reader.close();
 
         JSONArray jsonArray = (JSONArray) jsonObject.get("root");
         listData.clear();
-
-        for (Object obj : jsonArray) {
-            IPhoneBook object = this.getObjectFromJson((JSONObject) obj);
+        for ( Object obj : jsonArray ) {
+            IPhoneBook object = this.getObjectFromJson((JSONObject)obj);
             listData.add(object);
         }
         return true;
     }
 }
-
+*/

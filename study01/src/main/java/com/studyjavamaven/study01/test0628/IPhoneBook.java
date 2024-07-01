@@ -1,3 +1,4 @@
+/*
 package test0628;
 
 public interface IPhoneBook {
@@ -17,3 +18,4 @@ public interface IPhoneBook {
     void setEmail(String email);
 }
 
+*/

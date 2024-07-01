@@ -1,5 +1,5 @@
 /*
-package sangbongtest0628;
+package com.softagape.sbtest0628;
 
 public interface IPhoneBook {
     Long getId();

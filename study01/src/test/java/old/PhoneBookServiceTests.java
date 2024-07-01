@@ -1,3 +1,4 @@
+/*
 package com.studyjavamaven.study01;
 
 import test0628.*;
@@ -95,4 +96,4 @@ public class PhoneBookServiceTests {
         assertThat(jsonService.size()).isEqualTo(3);
         assertThat(textService.size()).isEqualTo(3);
     }
-}
+}*/

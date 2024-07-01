@@ -1,3 +1,4 @@
+/*
 package test0628;
 
 import org.json.simple.JSONObject;
@@ -9,3 +10,4 @@ public interface IPhoneBookRepository<T> {
     boolean loadData(List<T> listData) throws Exception ;
 }
 
+*/

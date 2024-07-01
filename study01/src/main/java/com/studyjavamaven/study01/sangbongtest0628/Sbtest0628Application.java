@@ -1,7 +1,7 @@
 /*
-package sangbongtest0628;
+package com.softagape.sbtest0628;
 
-import sangbongtest0628.PhoneBookServiceImpl;
+import com.softagape.sbtest0628.make.PhoneBookServiceImpl;
 
 import java.util.Scanner;
 
@@ -53,11 +53,9 @@ public class Sbtest0628Application {
                         run = false;
                         break;
                     default:
-                        System.out.println("에러: 잘못된 입력입니다.");
+                        System.out.println("!!! 잘못된 입력입니다. !!!");
                         break;
                 }
-            } catch (IllegalArgumentException ex) {
-                System.out.println(ex.getMessage());
             } catch (Exception ex) {
                 ex.printStackTrace();
             }

@@ -1,5 +1,5 @@
 /*
-package sangbongtest0628;
+package test0628;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -26,4 +26,5 @@ public class PhoneBook implements IPhoneBook {
                 , this.id, this.name, this.group, this.phoneNumber, this.email);
     }
 }
+
 */

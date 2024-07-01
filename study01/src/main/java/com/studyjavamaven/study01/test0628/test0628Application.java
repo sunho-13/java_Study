@@ -1,3 +1,4 @@
+/*
 package test0628;
 
 import java.util.Scanner;
@@ -62,3 +63,4 @@ public class test0628Application {
     }
 }
 
+*/

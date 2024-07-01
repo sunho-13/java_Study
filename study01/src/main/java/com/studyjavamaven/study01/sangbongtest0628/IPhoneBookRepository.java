@@ -1,7 +1,5 @@
 /*
-package sangbongtest0628;
-
-import org.json.simple.JSONObject;
+package com.softagape.sbtest0628;
 
 import java.util.List;
 

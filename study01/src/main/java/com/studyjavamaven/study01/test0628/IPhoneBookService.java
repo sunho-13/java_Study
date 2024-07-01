@@ -1,3 +1,4 @@
+/*
 package test0628;
 import java.util.List;
 
@@ -17,3 +18,4 @@ public interface IPhoneBookService<T> {
     boolean loadData() throws Exception;
     boolean saveData() throws Exception;
 }
+*/

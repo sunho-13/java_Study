@@ -1,7 +1,7 @@
 /*
-package sangbongtest0628;
+package com.softagape.sbtest0628;
 
-import sangbongtest0628.PhoneBook;
+import com.softagape.sbtest0628.make.PhoneBook;
 
 import java.util.List;
 import java.util.Scanner;
@@ -25,11 +25,6 @@ public class ConsoleApplication {
     public int getChoice(Scanner input) throws Exception {
         System.out.print("선택 > ");
         String a = input.nextLine();
-
-        if (!a.matches("\\d+")) {
-            throw new IllegalArgumentException("에러: 잘못된 입력입니다.");
-        }
-
         return Integer.parseInt(a);
     }
 
@@ -37,9 +32,9 @@ public class ConsoleApplication {
         this.printList(this.phoneBookService.getAllList());
     }
 
-    private EPhoneGroup getGroupFromScanner(Scanner input, String title) {
+    private EPhoneGroup getGroupFromScanner(Scanner input, String title, boolean bUpdate) {
         boolean doWhile = false;
-        EPhoneGroup eGroup = EPhoneGroup.Friends;
+        EPhoneGroup eGroup = null;
         do {
             System.out.print(title + "연락처 그룹{Friends(1),Families(2),Schools(3),Jobs(4),Hobbies(5)} :");
             String group = input.nextLine();
@@ -64,6 +59,10 @@ public class ConsoleApplication {
                     eGroup = EPhoneGroup.Hobbies;
                     doWhile = false;
                     break;
+                case "":
+                    if (bUpdate) {
+                        return eGroup;
+                    }
                 default:
                     doWhile = true;
                     System.out.println("Friends(1),Families(2),Schools(3),Jobs(4),Hobbies(5) 1~5사이에 입력");
@@ -79,7 +78,7 @@ public class ConsoleApplication {
         System.out.println("--------");
         System.out.print("연락처 이름 :");
         String name = input.nextLine();
-        EPhoneGroup group = this.getGroupFromScanner(input, "");
+        EPhoneGroup group = this.getGroupFromScanner(input, "", false);
         System.out.print("전화번호 :");
         String phone = input.nextLine();
         System.out.print("이메일 :");
@@ -91,42 +90,23 @@ public class ConsoleApplication {
         }
     }
 
-
     public void update(Scanner input) throws Exception {
         IPhoneBook result = getFindIdConsole(input, "수정할");
         if (result == null) {
-            System.out.println("에러: ID 데이터가 존재하지 않습니다.");
+            System.out.println("에러: ID 데이터 가 존재하지 않습니다.");
             return;
         }
-
-        System.out.print("연락처 이름: ");
+        System.out.print("연락처 이름 :");
         String name = input.nextLine();
-        if (name.isEmpty()) {
-            name = result.getName();
-        }
-
-        EPhoneGroup group = this.getGroupFromScanner(input, "");
-
-        System.out.print("전화번호: ");
+        EPhoneGroup group = this.getGroupFromScanner(input, "", true);
+        System.out.print("전화번호 :");
         String phone = input.nextLine();
-        if (phone.isEmpty()) {
-            phone = result.getPhoneNumber();
-        }
-
-        System.out.print("이메일: ");
+        System.out.print("이메일 :");
         String email = input.nextLine();
-        if (email.isEmpty()) {
-            email = result.getEmail();
-        }
-
         IPhoneBook update = PhoneBook.builder()
-                .id(result.getId())
-                .name(name)
+                .id(result.getId()).name(name)
                 .group(group)
-                .phoneNumber(phone)
-                .email(email)
-                .build();
-
+                .phoneNumber(phone).email(email).build();
         if (this.phoneBookService.update(update.getId(), update)) {
             this.phoneBookService.saveData();
             System.out.println("결과: 데이터 수정 성공되었습니다.");
@@ -155,11 +135,11 @@ public class ConsoleApplication {
             try {
                 l = Long.parseLong(id);
             } catch (Exception ex) {
-                System.out.println("에러: ID 번호를 숫자로만 입력하세요.");
+                System.out.println("ID 번호를 숫자로만 입력하세요.");
             }
         } while ( l <= 0 );
-        IPhoneBook IPhoneBook = (IPhoneBook)this.phoneBookService.findById(l);
-        return IPhoneBook;
+        IPhoneBook iPhoneBook = (IPhoneBook)this.phoneBookService.findById(l);
+        return iPhoneBook;
     }
 
     private void printList(List<IPhoneBook> array) {
@@ -177,7 +157,7 @@ public class ConsoleApplication {
     }
 
     public void searchByGroup(Scanner input) {
-        EPhoneGroup group = this.getGroupFromScanner(input, "찾을 ");
+        EPhoneGroup group = this.getGroupFromScanner(input, "찾을 ", false);
 
         List<IPhoneBook> list = this.phoneBookService.getListFromGroup(group);
         this.printList(list);
@@ -198,5 +178,4 @@ public class ConsoleApplication {
         List<IPhoneBook> list = this.phoneBookService.getListFromEmail(findEmail);
         this.printList(list);
     }
-}
-*/
+}*/

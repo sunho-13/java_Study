@@ -1,3 +1,4 @@
+/*
 package test0628;
 
 import test0628.PhoneBook;
@@ -247,3 +248,4 @@ public class ConsoleApplication {
 }
 
 
+*/

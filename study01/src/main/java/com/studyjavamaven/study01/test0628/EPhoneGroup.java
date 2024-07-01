@@ -1,3 +1,4 @@
+/*
 package test0628;
 
 public enum EPhoneGroup {
@@ -8,3 +9,4 @@ public enum EPhoneGroup {
     Hobbies
 }
 
+*/
